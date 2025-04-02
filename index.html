@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Aniversário Duplo - Site Feio</title>
+  <style>
+    /* Estilos intencionalmente chamativos e conflitantes */
+    body {
+      background-color: #ffcc00; /* Fundo amarelo vibrante */
+      color: #ff0000; /* Texto vermelho */
+      font-family: "Comic Sans MS", cursive, sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    .header {
+      background-color: #00ffff;
+      padding: 10px;
+      border-bottom: 5px dashed #0000ff;
+    }
+    .container {
+      margin: 20px;
+      padding: 20px;
+      border: 5px dotted #00ff00;
+      background-color: #ff99cc;
+    }
+    .big-image {
+      width: 100%;
+      max-width: 100%;
+      border: 10px double #000000;
+    }
+    marquee {
+      font-size: 24px;
+      color: #0000ff;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    window.onload = function() {
+      // Cria um botão para o usuário clicar e iniciar a música
+      var playButton = document.createElement("button");
+      playButton.innerText = "Era pra tocar uma musica automaticamente, mas como não consegui fazer isso, clique aqui";
+      playButton.style.fontSize = "20px";
+      playButton.style.padding = "10px";
+      playButton.style.marginTop = "20px";
+      
+      // Insere o botão no topo da página
+      document.body.insertBefore(playButton, document.body.firstChild);
+      
+      playButton.addEventListener("click", function() {
+        // Ao clicar, cria o iframe para reproduzir a música
+        var iframe = document.createElement("iframe");
+        iframe.src = "https://www.youtube.com/embed/ZNGqBDRJgvo?autoplay=1";
+        // Define dimensões zero para esconder o player
+        iframe.style.width = "0";
+        iframe.style.height = "0";
+        iframe.style.border = "0";
+        document.body.appendChild(iframe);
+        // Remove o botão após iniciar a música
+        playButton.style.display = "none";
+      });
+    };
+  </script>
+
+  <!-- Texto em marquee para um efeito retro (e um pouco irritante!) -->
+  <marquee behavior="alternate" scrollamount="10">
+    Feliz Aniversário seus viados
+  </marquee>
+
+  <div class="header">
+    <h1>muitos anos de vida</h1>
+  </div>
+
+  <div class="container">
+    <p>o fodido que fez o site não conseguiu colocar duas imagens de cada lado, mas tem uma abaixo do desenho, por favor olhar</p>
+    <img class="big-image" src="ab83461a-8af9-4312-897f-a0b34c8f9721.jpg" alt="Imagem Gigantesca">
+    <img class="big-image" src="Sem título.png" alt="Imagem Gigantesca">
+  </div>
+</body>
+</html>
